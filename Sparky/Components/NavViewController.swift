@@ -17,15 +17,6 @@ class NavViewController: UIViewController {
     private var mode: NavigationMode = .default
     private var navTitle: String = ""
     
-    private lazy var navigationTitle: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    
     init(mode: NavigationMode, navTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.mode = mode
@@ -53,13 +44,18 @@ class NavViewController: UIViewController {
     }
     
     private func setNavigationTitle() {
-        view.addSubview(navigationTitle)
-        navigationTitle.text = navTitle
+        let titleFont = UIFont.boldSystemFont(ofSize: 17)
+        let title = navTitle
+        let titleSize = title.size(withAttributes: [.font: titleFont])
         
-        NSLayoutConstraint.activate([
-            navigationTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            navigationTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5)
-        ])
+        let frame = CGRect(x: 0, y: 0, width: titleSize.width, height: 10.0)
+        let titleLabel = UILabel(frame: frame)
+        titleLabel.font = titleFont
+        titleLabel.textColor = .white
+        titleLabel.textAlignment = .center
+        titleLabel.text = title
+        navigationItem.titleView = titleLabel
+
     }
     
     private func setLeftThunder() {
@@ -71,18 +67,17 @@ class NavViewController: UIViewController {
         
         animationView.animationSpeed = 1.5
         
-        view.addSubview(animationView)
-        
-        
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        
+        let leftItem = UIBarButtonItem.init(customView: animationView)
+
         NSLayoutConstraint.activate([
-            animationView.widthAnchor.constraint(equalToConstant: 50),
-            animationView.heightAnchor.constraint(equalToConstant: 50),
-            animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
+            animationView.widthAnchor.constraint(equalToConstant: 100),
+            animationView.heightAnchor.constraint(equalToConstant: 100),
+            
         ])
         
+        navigationItem.leftBarButtonItem =  leftItem
+      
         animationView.play()
     }
+    
 }
