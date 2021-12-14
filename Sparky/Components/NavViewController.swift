@@ -44,7 +44,7 @@ class NavViewController: UIViewController {
     }
     
     private func setNavigationTitle() {
-        let titleFont = UIFont.boldSystemFont(ofSize: 17)
+        let titleFont = UIFont.boldSystemFont(ofSize: 27)
         let title = navTitle
         let titleSize = title.size(withAttributes: [.font: titleFont])
         
@@ -71,7 +71,7 @@ class NavViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             animationView.widthAnchor.constraint(equalToConstant: 100),
-            animationView.heightAnchor.constraint(equalToConstant: 100),
+            animationView.heightAnchor.constraint(equalToConstant: 100)
             
         ])
         
