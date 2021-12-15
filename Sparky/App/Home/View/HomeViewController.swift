@@ -10,25 +10,8 @@ import Lottie
 
 class HomeViewController: BaseViewController {
     
-    private var storyCollectionDelegate = HomeStoryCollectionDelegate()
-    private var storyCollectionDataSource = HomeStoryCollectionDataSource()
-    
-    private lazy var storyCollectionView: UICollectionView = { [weak self] in
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        collectionView.isPagingEnabled = true
-        collectionView.isScrollEnabled = true
-    
-        collectionView.delegate = self?.storyCollectionDelegate
-        collectionView.dataSource = self?.storyCollectionDataSource
-        collectionView.register(HomeStoryCollectionViewCell.self, forCellWithReuseIdentifier: HomeStoryCollectionViewCell.identifier)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        return collectionView
-    }()
+    private var storyCollectionView = HomeStoryCollectionView()
+    private var homeVideoCollectionView = HomeVideoCollectionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +21,8 @@ class HomeViewController: BaseViewController {
     
     private func buildViewHierarchy() {
         view.addSubview(storyCollectionView)
+        view.addSubview(homeVideoCollectionView)
+        
     }
     
     private func setupConstraints() {
@@ -45,10 +30,18 @@ class HomeViewController: BaseViewController {
             storyCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             storyCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
             storyCollectionView.heightAnchor.constraint(equalToConstant: 100),
-            storyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            storyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            storyCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            homeVideoCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 20),
+            homeVideoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            homeVideoCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            homeVideoCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            homeVideoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
-    
 }
 
 

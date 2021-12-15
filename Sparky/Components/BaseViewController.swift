@@ -15,6 +15,4 @@ class BaseViewController: NavViewController {
         view.backgroundColor = .black
     }
     
-
-
 }

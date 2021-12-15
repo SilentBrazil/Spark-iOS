@@ -8,7 +8,7 @@
 import UIKit
 
 class RoundImageView: UIView {
-    
+    private let height: CGFloat = 60
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -26,20 +26,24 @@ class RoundImageView: UIView {
     }
     
     private func configure(named: String) {
+        translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: named)
         self.addSubview(imageView)
 
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 60),
-            imageView.heightAnchor.constraint(equalToConstant: 60)
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: height),
+            imageView.heightAnchor.constraint(equalToConstant: height)
         ])
+        
+        makeRounded()
     }
     
-    public func makeRounded(height: CGFloat) {
-        imageView.layer.borderWidth = 0.5
+    private func makeRounded() {
+        imageView.layer.borderWidth = 1.4
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.masksToBounds = false
-        imageView.layer.cornerRadius = height
+        imageView.layer.cornerRadius = height / 2
         imageView.clipsToBounds = true
     }
 }
