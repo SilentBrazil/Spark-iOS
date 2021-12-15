@@ -7,5 +7,6 @@ target 'Sparky' do
 
   # Pods for Sparky 
    pod 'lottie-ios'
+   pod 'youtube-ios-player-helper'
 
 end
