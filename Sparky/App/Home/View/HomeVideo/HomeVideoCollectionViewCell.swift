@@ -11,6 +11,7 @@ class HomeVideoCollectionViewCell: UICollectionViewCell {
     static let identifier = "HomeVideoCollectionViewCellIdentifier"
     
     private var podcastImage = RoundImageView(named: "flow")
+    private var homeLatestVideosCollectionView = HomeLatestVideosCollectionView()
     
     private lazy var podcastNameLabel: UILabel = {
         let label = UILabel()
@@ -29,27 +30,6 @@ class HomeVideoCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    
-    private lazy var firstStackView: UIStackView = { [unowned self] in
-        let stackView = UIStackView(arrangedSubviews: [self.podcastImage, self.podcastNameLabel, self.leftArrow])
-        stackView.spacing = 3
-        stackView.alignment = .leading
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    private lazy var secondStackView: UIStackView = { [unowned self] in
-        let stackView = UIStackView(arrangedSubviews: [self.podcastImage, self.podcastNameLabel])
-        stackView.spacing = 3
-        stackView.alignment = .leading
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
@@ -62,9 +42,10 @@ class HomeVideoCollectionViewCell: UICollectionViewCell {
     
     private func buildViewHierarchy() {
         translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(podcastImage)
-        self.addSubview(podcastNameLabel)
-        self.addSubview(leftArrow)
+        addSubview(podcastImage)
+        addSubview(podcastNameLabel)
+        addSubview(leftArrow)
+        addSubview(homeLatestVideosCollectionView)
     }
     
     private func setupConstraints() {
@@ -82,6 +63,15 @@ class HomeVideoCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             leftArrow.topAnchor.constraint(equalTo: podcastImage.topAnchor, constant: 15),
             leftArrow.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            homeLatestVideosCollectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            homeLatestVideosCollectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            homeLatestVideosCollectionView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            homeLatestVideosCollectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
+            homeLatestVideosCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            homeLatestVideosCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
     }
 }
