@@ -14,6 +14,11 @@
 		9EAC916827692C8A005FD307 /* HomeStoryCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC916727692C8A005FD307 /* HomeStoryCollectionDataSource.swift */; };
 		9EAC916A27692CA4005FD307 /* HomeStoryCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC916927692CA4005FD307 /* HomeStoryCollectionDelegate.swift */; };
 		9EAC916C276931D9005FD307 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC916B276931D9005FD307 /* RoundImageView.swift */; };
+		9EAC9171276A2AA5005FD307 /* HomeVideoCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC9170276A2AA5005FD307 /* HomeVideoCollectionDataSource.swift */; };
+		9EAC9173276A2AB0005FD307 /* HomeVideoCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC9172276A2AB0005FD307 /* HomeVideoCollectionDelegate.swift */; };
+		9EAC9175276A2B54005FD307 /* HomeStoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC9174276A2B54005FD307 /* HomeStoryCollectionView.swift */; };
+		9EAC9177276A3373005FD307 /* HomeVideoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC9176276A3373005FD307 /* HomeVideoCollectionView.swift */; };
+		9EAC9179276A345B005FD307 /* HomeVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC9178276A345B005FD307 /* HomeVideoCollectionViewCell.swift */; };
 		9EB8B03B2768D08E008A70A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8B03A2768D08E008A70A9 /* AppDelegate.swift */; };
 		9EB8B03D2768D08E008A70A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8B03C2768D08E008A70A9 /* SceneDelegate.swift */; };
 		9EB8B0442768D08F008A70A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB8B0432768D08F008A70A9 /* Assets.xcassets */; };
@@ -29,6 +34,11 @@
 		9EAC916727692C8A005FD307 /* HomeStoryCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoryCollectionDataSource.swift; sourceTree = "<group>"; };
 		9EAC916927692CA4005FD307 /* HomeStoryCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoryCollectionDelegate.swift; sourceTree = "<group>"; };
 		9EAC916B276931D9005FD307 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		9EAC9170276A2AA5005FD307 /* HomeVideoCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCollectionDataSource.swift; sourceTree = "<group>"; };
+		9EAC9172276A2AB0005FD307 /* HomeVideoCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCollectionDelegate.swift; sourceTree = "<group>"; };
+		9EAC9174276A2B54005FD307 /* HomeStoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoryCollectionView.swift; sourceTree = "<group>"; };
+		9EAC9176276A3373005FD307 /* HomeVideoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCollectionView.swift; sourceTree = "<group>"; };
+		9EAC9178276A345B005FD307 /* HomeVideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EB8B0372768D08E008A70A9 /* Sparky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB8B03A2768D08E008A70A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB8B03C2768D08E008A70A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,14 +86,26 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9EAC916427692C48005FD307 /* CollectionViewCell */ = {
+		9EAC916427692C48005FD307 /* HomeStory */ = {
 			isa = PBXGroup;
 			children = (
 				9EAC916527692C6C005FD307 /* HomeStoryCollectionViewCell.swift */,
 				9EAC916727692C8A005FD307 /* HomeStoryCollectionDataSource.swift */,
 				9EAC916927692CA4005FD307 /* HomeStoryCollectionDelegate.swift */,
+				9EAC9174276A2B54005FD307 /* HomeStoryCollectionView.swift */,
 			);
-			path = CollectionViewCell;
+			path = HomeStory;
+			sourceTree = "<group>";
+		};
+		9EAC916F276A2A39005FD307 /* HomeVideo */ = {
+			isa = PBXGroup;
+			children = (
+				9EAC9170276A2AA5005FD307 /* HomeVideoCollectionDataSource.swift */,
+				9EAC9172276A2AB0005FD307 /* HomeVideoCollectionDelegate.swift */,
+				9EAC9176276A3373005FD307 /* HomeVideoCollectionView.swift */,
+				9EAC9178276A345B005FD307 /* HomeVideoCollectionViewCell.swift */,
+			);
+			path = HomeVideo;
 			sourceTree = "<group>";
 		};
 		9EB8B02E2768D08E008A70A9 = {
@@ -144,7 +166,8 @@
 		9EB8B0522768D559008A70A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9EAC916427692C48005FD307 /* CollectionViewCell */,
+				9EAC916F276A2A39005FD307 /* HomeVideo */,
+				9EAC916427692C48005FD307 /* HomeStory */,
 				9EB8B0532768D578008A70A9 /* HomeViewController.swift */,
 			);
 			path = View;
@@ -227,13 +250,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAC9177276A3373005FD307 /* HomeVideoCollectionView.swift in Sources */,
 				9EAC916827692C8A005FD307 /* HomeStoryCollectionDataSource.swift in Sources */,
 				9EAC91632768FA35005FD307 /* BaseViewController.swift in Sources */,
+				9EAC9179276A345B005FD307 /* HomeVideoCollectionViewCell.swift in Sources */,
 				9EB8B03B2768D08E008A70A9 /* AppDelegate.swift in Sources */,
 				9EB8B03D2768D08E008A70A9 /* SceneDelegate.swift in Sources */,
 				9E3F10602768DA6700CB433D /* NavViewController.swift in Sources */,
+				9EAC9173276A2AB0005FD307 /* HomeVideoCollectionDelegate.swift in Sources */,
+				9EAC9171276A2AA5005FD307 /* HomeVideoCollectionDataSource.swift in Sources */,
 				9EB8B0542768D578008A70A9 /* HomeViewController.swift in Sources */,
 				9EAC916627692C6C005FD307 /* HomeStoryCollectionViewCell.swift in Sources */,
+				9EAC9175276A2B54005FD307 /* HomeStoryCollectionView.swift in Sources */,
 				9EAC916A27692CA4005FD307 /* HomeStoryCollectionDelegate.swift in Sources */,
 				9EAC916C276931D9005FD307 /* RoundImageView.swift in Sources */,
 			);
