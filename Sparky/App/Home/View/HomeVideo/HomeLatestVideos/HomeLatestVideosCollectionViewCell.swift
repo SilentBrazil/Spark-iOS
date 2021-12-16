@@ -18,7 +18,8 @@ class HomeLatestVideosCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        playerView.load(withVideoId: "YlstuFZLMhU")
+        let playvarsDic = ["controls": 1, "playsinline": 0, "autohide": 1, "showinfo": 1, "autoplay": 1, "modestbranding": 1]
+        playerView.load(withVideoId: "YlstuFZLMhU", playerVars: playvarsDic)
     }
     
     required init?(coder: NSCoder) {
