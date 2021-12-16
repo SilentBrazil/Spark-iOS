@@ -26,6 +26,7 @@ class StoryCollectionView: UICollectionView {
         self.isPagingEnabled = true
         self.isScrollEnabled = true
         self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
         translatesAutoresizingMaskIntoConstraints = false
         delegate = storyCollectionDelegate
         dataSource = storyCollectionDataSource

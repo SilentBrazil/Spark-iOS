@@ -57,16 +57,16 @@ class HomeViewController: BaseListViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.4)
+            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.3)
         } else {
-            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.6)
         }
         
     }
  
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 5
     }
 
 

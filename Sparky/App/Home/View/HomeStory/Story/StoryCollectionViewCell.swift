@@ -24,13 +24,15 @@ class StoryCollectionViewCell: UICollectionViewCell {
     
     private func buildViewHierarchy() {
         translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(storyImage)
+        self.addSubview(storyImage)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            storyImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            storyImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+            storyImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            storyImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            storyImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            storyImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
         ])
     }
 }
