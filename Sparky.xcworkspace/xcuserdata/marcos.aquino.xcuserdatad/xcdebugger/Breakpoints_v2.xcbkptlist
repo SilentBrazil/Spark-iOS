@@ -7,64 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "95C12022-912F-41EC-A7F8-C61637ED8790"
+            uuid = "7BA9905B-9723-47A6-9103-A3469BFB6CF8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sparky/App/Home/View/CollectionViewCell/HomeStoryCollectionViewCell.swift"
+            filePath = "Sparky/App/Home/View/HomeVideo/HomeLatestVideos/HomeLatestVideosCollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C14FA1A7-16CC-4B78-B132-87D28B528825"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sparky/App/Home/View/HomeVideo/HomeLatestVideos/HomeLatestVideosCollectionView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "init(frame:)"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F08C6CA5-2795-4BDE-89CF-E692FFD5998E"
+            uuid = "9922A421-51CA-4D3B-8673-734AD8866EC9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sparky/App/Home/View/CollectionViewCell/HomeStoryCollectionViewCell.swift"
+            filePath = "Sparky/App/Home/View/HomeStory/Story/StoryCollectionView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "buildViewHierarchy()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "configureCollection()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50F8FD07-D41B-49A8-A273-E0AE56D1EFF2"
+            uuid = "89CEA69A-200C-4EDC-90AA-427E207CBB58"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sparky/App/Home/View/HomeStory/HomeStoryCollectionViewCell.swift"
+            filePath = "Sparky/App/Home/View/HomeStory/Story/StoryCollectionView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "init(frame:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60FCDD39-33B0-452D-A4D6-865394C40CD9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sparky/App/Home/View/HomeStory/HomeStoryCollectionDataSource.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

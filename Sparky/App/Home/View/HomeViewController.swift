@@ -8,40 +8,67 @@
 import UIKit
 import Lottie
 
-class HomeViewController: BaseViewController {
-    
-    private var storyCollectionView = HomeStoryCollectionView()
-    private var homeVideoCollectionView = HomeVideoCollectionView()
+class HomeViewController: BaseListViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buildViewHierarchy()
-        setupConstraints()
+        collectionView.register(HomeStoryCollectionViewCell.self, forCellWithReuseIdentifier: HomeStoryCollectionViewCell.identifier)
+        collectionView.register(HomeVideoCollectionViewCell.self, forCellWithReuseIdentifier: HomeVideoCollectionViewCell.identifier)
     }
     
     private func buildViewHierarchy() {
-        view.addSubview(storyCollectionView)
-        view.addSubview(homeVideoCollectionView)
+        
         
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            storyCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            storyCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            storyCollectionView.heightAnchor.constraint(equalToConstant: 100),
-            storyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            storyCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            homeVideoCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 20),
-            homeVideoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            homeVideoCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            homeVideoCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeVideoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+     
     }
-}
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
 
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return 4
+        }
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeStoryCollectionViewCell.identifier, for: indexPath) as? HomeStoryCollectionViewCell {
+                return cell
+            }
+        } else {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVideoCollectionViewCell.identifier, for: indexPath) as? HomeVideoCollectionViewCell {
+                return cell
+            }
+        }
+       
+        
+        return UICollectionViewCell()
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.4)
+        } else {
+            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+        }
+        
+    }
+ 
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+
+
+}
 

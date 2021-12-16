@@ -9,9 +9,6 @@ import UIKit
 
 class HomeStoryCollectionView: UICollectionView {
     
-    private var storyCollectionDelegate = HomeStoryCollectionDelegate()
-    private var storyCollectionDataSource = HomeStoryCollectionDataSource()
-    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
@@ -27,10 +24,6 @@ class HomeStoryCollectionView: UICollectionView {
     private func configureCollection() {
         self.isPagingEnabled = true
         self.isScrollEnabled = true
-
-        self.delegate = storyCollectionDelegate
-        self.dataSource = storyCollectionDataSource
-        self.register(HomeStoryCollectionViewCell.self, forCellWithReuseIdentifier: HomeStoryCollectionViewCell.identifier)
         
         self.translatesAutoresizingMaskIntoConstraints = false
     }
