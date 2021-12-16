@@ -31,7 +31,5 @@ class HomeLatestVideosCollectionView: UICollectionView {
         self.delegate = homeLatetsVideosDelegate
         self.dataSource = homeLatetsVideoDataSource
         self.register(HomeLatestVideosCollectionViewCell.self, forCellWithReuseIdentifier: HomeLatestVideosCollectionViewCell.identifier)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

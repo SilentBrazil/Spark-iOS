@@ -9,8 +9,7 @@ import UIKit
 
 class HomeStoryCollectionViewCell: UICollectionViewCell {
     static let identifier = "HomeStoryCollectionViewCellIdentifier"
-    
-    private var storyImage = RoundImageView(named: "flow")
+    private let storyCollectionview = StoryCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,13 +23,16 @@ class HomeStoryCollectionViewCell: UICollectionViewCell {
     
     private func buildViewHierarchy() {
         translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(storyImage)
+        addSubview(storyCollectionview)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            storyImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            storyImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+            storyCollectionview.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            storyCollectionview.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            storyCollectionview.widthAnchor.constraint(equalToConstant: 10),
+            storyCollectionview.heightAnchor.constraint(equalToConstant: 100),
+            storyCollectionview.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])
     }
 }

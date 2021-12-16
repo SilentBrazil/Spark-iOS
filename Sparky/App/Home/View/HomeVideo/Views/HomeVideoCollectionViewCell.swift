@@ -66,10 +66,10 @@ class HomeVideoCollectionViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
+            homeLatestVideosCollectionView.topAnchor.constraint(equalTo: podcastImage.bottomAnchor, constant: 80),
             homeLatestVideosCollectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            homeLatestVideosCollectionView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             homeLatestVideosCollectionView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            homeLatestVideosCollectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7),
+            homeLatestVideosCollectionView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6),
             homeLatestVideosCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             homeLatestVideosCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])

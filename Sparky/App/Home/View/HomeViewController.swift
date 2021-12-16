@@ -8,40 +8,32 @@
 import UIKit
 import Lottie
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseListViewController {
     
-    private var storyCollectionView = HomeStoryCollectionView()
-    private var homeVideoCollectionView = HomeVideoCollectionView()
+    private var homeViewDelegate = HomeViewDelegate()
+    private var homeViewDataSource = HomeViewDataSource()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buildViewHierarchy()
-        setupConstraints()
+        configureCollectionViews()
     }
     
     private func buildViewHierarchy() {
-        view.addSubview(storyCollectionView)
-        view.addSubview(homeVideoCollectionView)
+        
         
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            storyCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            storyCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            storyCollectionView.heightAnchor.constraint(equalToConstant: 100),
-            storyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            storyCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            homeVideoCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 20),
-            homeVideoCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            homeVideoCollectionView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            homeVideoCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeVideoCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
+     
     }
+    
+    private func configureCollectionViews() {
+        collectionView.delegate = homeViewDelegate
+        collectionView.dataSource = homeViewDataSource
+        collectionView.register(HomeStoryCollectionViewCell.self, forCellWithReuseIdentifier: HomeStoryCollectionViewCell.identifier)
+        collectionView.register(HomeVideoCollectionViewCell.self, forCellWithReuseIdentifier: HomeVideoCollectionViewCell.identifier)
+    }
+    
 }
-
 
