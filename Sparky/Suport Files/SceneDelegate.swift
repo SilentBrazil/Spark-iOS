@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationBarAppearace.tintColor = .white
         navigationBarAppearace.barTintColor = .blue
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let viewController = HomeViewController(mode: .leftThunder, navTitle: "Sparky")
+        let viewController = MainTabBarController()
         let navigationController = UINavigationController(rootViewController: viewController)
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
